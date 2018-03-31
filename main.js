@@ -67,18 +67,30 @@ function File() {
     ];
 };
 
+
 function CheckAnswer(){
    
    var ip=document.getElementById('q');
-   var ClosedKey=document.getElementById('w');
+   var ip2 = ip.value.toString();
    var answer=document.getElementById('e');
-   d= closedKey[0];
-   N = ClosedKey[1];
+   var answer2 = answer.value.toString();
+   var closedKey = []; var answer3 = [];
+	var inputs = document.getElementById('w');
+    var inputs2 = inputs.value.toString();
+	for (var i = 0; i < inputs2.length; ++i) {
+		closedKey.push(inputs2[i].value);		
+	}
+	for (var l = 0; l < answer2.length; ++l) {
+		answer3.push(answer2[l].value);		
+	}///vse v int
+  var d = inputs2[0]; var d2 =parseInt(d);
+  var N =parseInt(inputs2[0]+inputs[2]+inputs[3]);
    var arr2  =  [];
-    for( i = 0; i < answer.length; ++i) {
-		arr2[i] = (answer[i]^d)%N;
+    for( var p = 0, j=0; p < answer2.length; ++p, j++) {
+		arr2[j] = (answer2[p]^d2)%N;
     }
-    if (arr2 == "40264" && ip == "192.168.0.4")
-    return true;
-    else return false;
+    var itog = arr2.toString();
+    if (itog == "40264" &&  ip2 == "192.168.0.4" )
+    alert('Right! Good job!');
+    else alert("Wrong answer!");
 }
