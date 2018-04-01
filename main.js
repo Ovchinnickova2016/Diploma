@@ -1,4 +1,58 @@
 
+function WorkingSpace(x,y,width,height,color,id,mysvg)
+{
+    var newElement = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+    newElement.setAttribute('x',x);
+    newElement.setAttribute('y',y);
+    newElement.setAttribute('width',width);
+    newElement.setAttribute('height',height);
+    newElement.setAttribute('fill',color);
+    newElement.setAttribute('id',id)
+    mysvg.appendChild(newElement);
+}
+
+function Create(){
+    var mysvg=document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+    mysvg.setAttribute('width','800');
+    mysvg.setAttribute('height','800');
+    mysvg.setAttribute('viewBox','0 0 800 800');
+    mydiv.appendChild(mysvg); 
+    WorkingSpace(100,0,700,600,'white','space_3',mysvg);
+}
+
+Create();
+
+//микро-библиотека для создания SVG элементов и установки атрибутов
+var SVG = {
+		
+    //нужные пространства имен
+    svgns: 'http://www.w3.org/2000/svg',
+    xlink: 'http://www.w3.org/1999/xlink',
+    
+    //создание svg элемента
+    createElement: function(name, attrs){
+        var element = document.createElementNS(SVG.svgns, name);
+        
+        if(attrs) {
+            SVG.setAttr(element, attrs);
+        }
+        return element;
+    },
+    
+    setAttr: function(element, attrs) {
+                    for(var i in attrs) {
+                        if(i === 'href') { //путь к изображению приписывается в атрибуте xlink:href
+                            element.setAttributeNS(SVG.xlink, i, attrs[i]);
+                        } else { //обычный атрибут
+                            element.setAttribute(i, attrs[i]);
+                        }
+                    }
+                    return element;
+                }
+        
+     
+}
+
 
 //Компьютер
 function Computer() {
@@ -66,7 +120,6 @@ function File() {
         }
     ];
 };
-
 
 function CheckAnswer(){
    
