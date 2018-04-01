@@ -143,7 +143,7 @@ function CheckAnswer(){
 		arr2[j] = (answer2[p]^d2)%N;
     }
     var itog = arr2.toString();
-    if (itog == "40264" &&  ip2 == "192.168.0.4" )
+    if (itog == "ИСТИНА" &&  ip2 == "192.168.0.4" )
     alert('Right! Good job!');
     else alert("Wrong answer!");
 }
