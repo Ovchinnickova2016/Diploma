@@ -1,0 +1,73 @@
+#widget {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  height: 1050px;
+  width: 850px;
+  display: bloc;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Segoe UI";
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-decoration: none; }
+
+svg {
+  width: 850;
+  height: 850; }
+
+.divAction {
+  width: 850px;
+  height: 200px;
+  color: #f5f5f5; }
+
+object {
+  width: 100px;
+  height: 100px; }
+
+.one {
+  width: 200px;
+  margin-left: 20px;
+  margin-top: 50px;
+  border-radius: 10px;
+  height: 30px;
+  text-align: center; }
+
+.two {
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 10px; }
+
+.three {
+  width: 200px;
+  margin-left: 20px;
+  margin-top: 50px;
+  height: 30px;
+  text-align: center;
+  border-radius: 10px; }
+
+button.Check {
+  padding: 0;
+  display: block;
+  width: 200px;
+  height: 30px;
+  background: #ffffff;
+  color: black;
+  font-family: "Segoe UI";
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px #313131;
+  margin-top: 50px;
+  margin-left: 75%; }
+
+#dl {
+  padding-right: 500px; }
+
+#cloud {
+  padding-bottom: 10px;
+  padding-left: 50px; }
+
+/*# sourceMappingURL=style.css.map */
