@@ -12,12 +12,16 @@ function WorkingSpace(typeobj,x,y,width,height,color,id,mysvg)
     mysvg.appendChild(newElement);
 }
 
-function getNode(n, v) {
-    n = document.createElementNS("http://www.w3.org/2000/svg", n);
-    for (var p in v)
-      n.setAttributeNS(null, p.replace(/[A-Z]/g, function(m, p, o, s) { return "-" + m.toLowerCase(); }), v[p]);
-    return n
-  }
+function ProtoObject(typeobj,test,mysvg)
+{
+    var newElement = document.createElementNS("http://www.w3.org/2000/svg", typeobj);
+    newElement.setAttributeNS(null,'x',test.x);
+    newElement.setAttributeNS(null,'y',test.y);
+    newElement.setAttributeNS(null,'width',test.width);
+    newElement.setAttributeNS(null,'height',test.height);
+    newElement.setAttributeNS(null,'fill',test.fill);
+    mysvg.appendChild(newElement);
+}
 
 //автоматически вызываемая функция создаёт пространство
 //рабочей области + формирует создание области настроек 
@@ -36,11 +40,10 @@ function Connection(svg){
     fetchResult.then(function(response) {  
         return response.json();  
     }).then(function(json) {  
-        var kek = json.array[0].rect;
-        console.log(kek);
-        console.log(JSON.stringify(kek));
-        var e = getNode('rect',{fill:kek.fill,x:kek.x,y:kek.y,width:kek.width,height:kek.height});
-        svg.appendChild(e);
+        var jsonObj = json.array[0].rect;
+        console.log(jsonObj);
+        console.log(JSON.stringify(jsonObj));
+        ProtoObject('rect',jsonObj,svg);
     });
 }
 
