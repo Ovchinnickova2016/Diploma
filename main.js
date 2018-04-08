@@ -74,12 +74,12 @@ function CreateLabSettings1(svg){
     
    // переменная cheсk создаёт кнопку для функции CheckAnswer()
     ButtonCreate("Check", "Отправить на проверку", 'CheckAnswer();', divAction);
-    ImageCreate(160, 500, 100, 100, '#11111', 1, svg, "images/comp.svg");
-    ImageCreate(350, 60, 100, 100, '#00000', 2, svg, "images/cloud.svg");
-    ImageCreate(100, 300, 100, 100, '#00000', 3, svg, "images/database.svg");
-    ImageCreate(370, 500, 100, 100, '#00000', 4, svg, "images/comp.svg");
-    ImageCreate(350, 300, 100, 100, '#00000', 5, svg, "images/commutador.svg");
-    ImageCreate(580, 500, 100, 100, '#00000', 6, svg, "images/comp.svg");
+    ImageCreate(160, 500, 100, 100, '#11111', 1, svg, "images/monitor.svg");
+    ImageCreate(350, 60, 100, 100, '#00000', 2, svg, "images/transfer.svg");
+    ImageCreate(100, 300, 100, 100, '#00000', 3, svg, "images/server-3.svg");
+    ImageCreate(370, 500, 100, 100, '#00000', 4, svg, "images/monitor.svg");
+    ImageCreate(350, 300, 100, 100, '#00000', 5, svg, "images/wifi.svg");
+    ImageCreate(580, 500, 100, 100, '#00000', 6, svg, "images/monitor.svg");
     LineCreate(190, 350, 350, 350, 4, 'black', 7, svg); //между коммутатором и бд
     LineCreate(400, 150, 400, 330, 4, 'black', 8, svg);//между коммутатором и облаком
     LineCreate(360, 370, 220, 510, 4, 'black', 9, svg);//между 1 компом и коммутатором
