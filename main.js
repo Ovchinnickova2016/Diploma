@@ -19,8 +19,20 @@ class Start {
             return this.element;
         }
     }
+    createElementSimple(name,attributes){
+            this.element = document.createElement(name);
+             if (attributes){
+                 for (name in attributes){;
+                    this.element.setAttribute([name],attributes[name]);
+                 }
+            return this.element;
+        }
+    }
+    appendNodeSVG(element){
+         return document.querySelector('svg').appendChild(element);
+    }
     appendNode(element){
-           return document.querySelector('svg').appendChild(element);
+        return document.getElementById('widget').appendChild(element);
     }
 }
 
@@ -37,6 +49,7 @@ class Rect1 extends Start{
         this.constract = (name) => {
            return this.createElementSVG(name,this.defaultSet);
         }
+        this.Connection();
     }
     Connection(){
         var fetchResult = fetch('http://localhost:5005/', {mode: 'cors',method: 'get',dataType: 'json'});
@@ -50,8 +63,8 @@ class Rect1 extends Start{
              var amount = Object.keys(jsonObj).length;
              for(amount in jsonObj)
              {
-                 console.log(jsonObj[amount].type);
-                 this.appendNode(this.createElementSVG(jsonObj[amount].type,jsonObj[amount]));
+                 //console.log(jsonObj[amount].type);
+                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type,jsonObj[amount]));
              }
           })
     }
@@ -60,6 +73,24 @@ class Rect1 extends Start{
 class Rect2 extends Start{
     constructor(){
         super();
+        this.ConnectionRect2();
+    }
+    ConnectionRect2(){
+        var fetchResult = fetch('http://localhost:5005/', {mode: 'cors',method: 'get',dataType: 'json'});
+        async function fetchAsync () {
+            var response = await fetchResult;
+            var data = await response.json();
+            return data;
+          }
+          fetchAsync().then(data => {
+             var jsonObj = data.array.Rect2;
+             var amount = Object.keys(jsonObj).length;
+             for(amount in jsonObj)
+             {
+                 console.log(jsonObj[amount].type);
+                 this.appendNode(this.createElementSimple(jsonObj[amount].type,jsonObj[amount]));
+             }
+          })
     }
 
 }
@@ -67,10 +98,9 @@ class Rect2 extends Start{
  (function(){
     var start = new Start();
     var rect = new Rect1();
+    var rect2 = new Rect2();
     var svg = start.createElementSVG('svg');
-    start.appendNode(rect.constract('rect'));
-    start.appendNode(rect.constract('image'));
-    rect.Connection();
+    start.appendNodeSVG(rect.constract('rect'));
 }());
 
 //проверка ответа, в будущем проверка будет 
