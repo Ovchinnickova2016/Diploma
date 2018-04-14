@@ -1,18 +1,39 @@
-[
-    {
-        "svg":{
-            "x": "0", 
-            "y": "0", 
-            "width": "850", 
-            "height": "850", 
-            "fill":"#f5f5f5"
-        },
-        "rect":{ 
-            "x": "100", 
-            "y": "100", 
-            "width": "100", 
-            "height": "100", 
-            "fill":"#4286f4"
+{
+        "Rect1":{
+            "comp1":{
+                "type":"rect",
+                "x": "0", 
+                "y": "0", 
+                "width": "100", 
+                "height": "100", 
+                "fill":"#000"
+            },
+            "comp2":{
+                "type":"image",
+                "x": "200", 
+                "y": "0", 
+                "width": "100", 
+                "height": "100", 
+                "fill":"#000",
+                "href":"images/monitor.svg"
+            },
+            "comp3":{
+                "type":"image",
+                "x": "200", 
+                "y": "200", 
+                "width": "100", 
+                "height": "100", 
+                "fill":"#000",
+                "href":"images/monitor.svg"
+            },
+            "server":{
+                "type":"image",
+                "x": "200", 
+                "y": "500", 
+                "width": "100", 
+                "height": "100", 
+                "fill":"#000",
+                "href":"images/server-3.svg"
+            }
         }
-    }
-]
+}
