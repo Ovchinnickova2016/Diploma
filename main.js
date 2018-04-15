@@ -97,20 +97,28 @@ class Rect2 extends Start{
     constructor(){
         super();
         this.connection('http://localhost:5000/labs1/2');
-        this.checkAnswer();
     }
+    /* on(event,callback,classNameBut){
+        this.elems = document.getElementsByClassName(classNameBut);
+        for(var i = 0;i<this.elems.length;i++){
+            this.elems[i].addEventListener(event,callback);
+        }
+    } */
     checkAnswer(){
-        fetch("http://localhost:5000/labs1/", {
+        fetch("http://localhost:5000/labs1/check/", {
             method: "POST",
             headers: {
               'Content-Type': 'application/json'
             },
           
             //make sure to serialize your JSON body
-            body: JSON.stringify({
-              "name": "myName",
-              "password": "myPassword"
-            })
+            body: JSON.stringify(
+                {
+                    "array":{
+                        "name": "myName",
+                        "password": "myPassword"
+                    }
+                })
           })
         }
 }
@@ -122,7 +130,25 @@ class Rect2 extends Start{
     var svg = start.createElementSVG('svg');
     start.appendNodeSVG(rect.constract('rect'));
 }());
-
+function checkAnswer(){
+    fetch("http://localhost:5000/labs1/check/", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      
+        //make sure to serialize your JSON body
+        body: JSON.stringify(
+            {
+                "numbers":{
+                    "ip_json": "ip2",
+                    "d_json": "d2",
+                    "N_json": "N2",
+                    "answer_json": "answer2"
+                }
+            })
+      })
+    }
 /* function File12(){
     alert('Посмотреть сообщение');
     var message = document.createAttribute('div');
