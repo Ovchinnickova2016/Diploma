@@ -1,0 +1,43 @@
+{"Rect2":
+    { 
+        "divAction": {
+        "type": "div",
+        "x": "0", 
+        "y": "850", 
+        "width": "850", 
+        "height": "250", 
+        "background-color":"white",
+        "id": "16"  
+        },
+        "one":{
+            "type": "input",
+            "class": "one",
+            "placeholder": "0.0.0.0",
+            "id": "ip"
+        },
+        "two":{
+            "type": "input",
+            "class": "two",
+            "placeholder": "d (число)",
+            "id": "d"
+        },
+        "three":{
+            "type": "input",
+            "class": "two",
+            "placeholder": "N (число)",
+            "id": "N"
+        },
+        "four":{
+            "type": "input",
+            "class": "three",
+            "placeholder": "Численный ответ",
+            "id": "e"
+        },
+        "button":{
+            "type": "button",
+            "class": "Check",
+            "onclick": "CheckAnswer();",
+            "color":"#000"
+        }
+    }
+}

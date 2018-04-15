@@ -21,6 +21,11 @@ class Start {
     }
     createElementSimple(name,attributes){
             this.element = document.createElement(name);
+            if(name==='button')
+                 {
+                    this.element.innerHTML = "Отправить на проверку";
+                     console.log(this.element);
+                 }
              if (attributes){
                  for (name in attributes){;
                     this.element.setAttribute([name],attributes[name]);
@@ -52,14 +57,14 @@ class Rect1 extends Start{
         this.Connection();
     }
     Connection(){
-        var fetchResult = fetch('http://localhost:5005/', {mode: 'cors',method: 'get',dataType: 'json'});
+        var fetchResult = fetch('http://localhost:5000/labs1/1', {mode: 'cors',method: 'get',dataType: 'json'});
         async function fetchAsync () {
             var response = await fetchResult;
             var data = await response.json();
             return data;
           }
           fetchAsync().then(data => {
-             var jsonObj = data.array.Rect1;
+             var jsonObj = data.Rect1;
              var amount = Object.keys(jsonObj).length;
              for(amount in jsonObj)
              {
@@ -76,18 +81,17 @@ class Rect2 extends Start{
         this.ConnectionRect2();
     }
     ConnectionRect2(){
-        var fetchResult = fetch('http://localhost:5005/', {mode: 'cors',method: 'get',dataType: 'json'});
+        var fetchResult = fetch('http://localhost:5000/labs1/2', {mode: 'cors',method: 'GET',dataType: 'json'});
         async function fetchAsync () {
             var response = await fetchResult;
             var data = await response.json();
             return data;
           }
           fetchAsync().then(data => {
-             var jsonObj = data.array.Rect2;
+             var jsonObj = data.Rect2;
              var amount = Object.keys(jsonObj).length;
              for(amount in jsonObj)
              {
-                 console.log(jsonObj[amount].type);
                  this.appendNode(this.createElementSimple(jsonObj[amount].type,jsonObj[amount]));
              }
           })

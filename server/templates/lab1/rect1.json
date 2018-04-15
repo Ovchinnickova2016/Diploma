@@ -1,0 +1,162 @@
+{
+        "Rect1":{
+            "Circle1":
+            {
+            "type": "circle",
+            "cx": "445",
+            "cy": "384",
+            "r": "2",
+            "stroke-width": "4",
+            "stroke": "blue",
+            "id": "13"
+            },
+            "Circle2":
+            {
+            "type": "circle",
+            "cx": "400",
+            "cy": "385",
+            "r": "2",
+            "stroke-width": "4",
+            "stroke": "blue",
+            "id": "14"
+            },
+            "Circle3":
+            {
+            "type": "circle",
+            "cx": "355",
+            "cy": "384",
+            "r": "2",
+            "stroke-width": "4",
+            "stroke": "blue",
+            "id": "15"
+            }, 
+            "comp1":{
+                "type": "image",
+                "x": "160",
+                "y": "500",
+                "width": "100",
+                "height": "100",
+                "color": "#11111",
+                "id": "1",
+                "href": "images/monitor.svg"
+            },
+            "transfer":{
+                "type": "image",
+                "x": "350",
+                "y": "60",
+                "width": "100",
+                "height": "100",
+                "color": "#11111",
+                "id": "2",
+                "href": "images/transfer.svg"
+            },
+            "db":{
+                "type": "image",
+                "x": "100",
+                "y": "300",
+                "width": "100",
+                "height": "100",
+                "color": "#11111",
+                "id": "3",
+                "href": "images/server-3.svg"
+            },
+        "comp2":
+            {
+            "type": "image",
+            "x": "370",
+            "y": "500",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "4",
+            "href": "images/monitor.svg"
+        },
+        "comp3":{
+            "type": "image",
+            "x": "580",
+            "y": "500",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "6",
+            "href": "images/monitor.svg"
+        },
+        "LineComDB":
+        {
+        "type": "line",
+        "x1": "190",
+        "y1": "380",
+        "x2": "445",
+        "y2": "385",
+        "stroke-width": "3",
+        "stroke": "lightgrey",
+        "id": "7"
+        },
+        "LineComClo":
+        {
+        "type": "line",
+        "x1": "400",
+        "y1": "150",
+        "x2": "400",
+        "y2": "330",
+        "stroke-width": "3",
+        "stroke": "lightgrey",
+        "id": "8"
+        },
+        "LineCom1Com":
+        {
+        "type": "line",
+        "x1": "355",
+        "y1": "384",
+        "x2": "220",
+        "y2": "503",
+        "stroke-width": "3",
+        "stroke": "lightgrey",
+        "id": "9"
+        },
+        "LineCom2Com":
+        {
+        "type": "line",
+        "x1": "400",
+        "y1": "370",
+        "x2": "400",
+        "y2": "503",
+        "stroke-width": "3",
+        "stroke": "lightgrey",
+        "id": "10"
+        },
+        "LineCom3Com":
+        {
+        "type": "line",
+        "x1": "445",
+        "y1": "384",
+        "x2": "600",
+        "y2": "503",
+        "stroke-width": "3",
+        "stroke": "lightgrey",
+        "id": "11"
+        },
+        "File":
+        {
+        "type": "image",
+        "x": "390",
+        "y": "83",
+        "width": "20",
+        "height": "20",
+        "color": "#11111",
+        "onclick": "File12()",
+        "href": "images/file.svg",
+        "id": "12"
+        },
+        "wifi":{
+            "type": "image",
+            "x": "350",
+            "y": "300",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "5",
+            "href": "images/wifi.svg"
+        }
+    }
+}
