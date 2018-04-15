@@ -5,21 +5,31 @@ def checkAnswer():
     ip2 = str(ip)
     d2 = 3
     N2 = 10
-    answer = 40264
+    answer0 = 40264
+    answer = [4, 0, 2, 6, 4]
     answer2 = str(answer)
+    print(answer2)
     dd = False
     dd = IsTheNumberSimple(d2)
-    right = ['14', '10', '18', '16', '14']
+    print(dd)
+    right = [14, 10, 18, 16, 14]
     p = 0
     j = 0
-    k = len(str(answer))
-    if dd==True & N2==10:
-        for p,j in range (k) :
-      	    right[j] = (right[p] ** d2)%N2
+    k = len(str(answer0))
+    print(k)
+    print(N2)
+    if dd==True:
+        if N2==10:
+            while j < k:
+      	        right[j] = right[j] ** d2 % N2
+      	        print (right[j])
+      	        j+=1
     else:
         print("wrong")
     right = str(right)
-    itog = str(answer2)
+    print(right)
+    itog = answer2
+    print(itog)
     if right==itog:
         if ip2 == "192.168.0.4":
             print('Right! Good job!')
