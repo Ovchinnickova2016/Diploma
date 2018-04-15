@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-{
-    "Rect1":{
-=======
-
 {
     "Rect1":{
         "Circle1":
@@ -35,7 +30,6 @@
         "stroke": "blue",
         "id": "15"
         }, 
->>>>>>> d86b7633c83ecb288d3f296085964c9dc73d3073
         "comp1":{
             "type": "image",
             "x": "160",
@@ -154,42 +148,6 @@
     "href": "images/file.svg",
     "id": "12"
     },
-<<<<<<< HEAD
-    "Circle1":
-    {
-    "type": "circle",
-    "cx": "445",
-    "cy": "384",
-    "r": "2",
-    "stroke-width": "4",
-    "stroke": "blue",
-    "z-index": "4",
-    "id": "13"
-    },
-    "Circle2":
-    {
-    "type": "circle",
-    "cx": "400",
-    "cy": "385",
-    "r": "2",
-    "stroke-width": "4",
-    "stroke": "blue",
-    "id": "14"
-    },
-    "Circle3":
-    {
-    "type": "circle",
-    "cx": "355",
-    "cy": "384",
-    "r": "2",
-    "stroke-width": "4",
-    "stroke": "blue",
-    "id": "15"
-    }
-}}
-    
-
-=======
     "wifi":{
         "type": "image",
         "x": "350",
@@ -240,9 +198,8 @@
                 "type": "button",
                 "class": "Check",
                 "placeholder": "Отправить на проверку",
-                "onclick": "CheckAnswer();"
+                "onclick": "checkAnswer();"
             }
         
         }
     }
->>>>>>> d86b7633c83ecb288d3f296085964c9dc73d3073

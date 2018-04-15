@@ -1,43 +1,42 @@
 import json
-
-#функция проверки ответа
-def CheckAnswer(json):
+def checkAnswer():
     json  
     ip = "192.168.0.4"
+    ip2 = str(ip)
     d2 = 3
     N2 = 10
     answer = 40264
     answer2 = str(answer)
-    ch = ['#', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ','Э', 'Ю', 'Я']
     dd = False
     dd = IsTheNumberSimple(d2)
     right = ['14', '10', '18', '16', '14']
     p = 0
     j = 0
-    k = len(answer)
+    k = len(str(answer))
     if dd==True & N2==10:
         for p,j in range (k) :
-     #       for j in range(k): #int p = 0, j=0, p < answer.length, p=+1, j=+1:
       	    right[j] = (right[p] ** d2)%N2
     else:
-        print("Неправильные данные!")
+        print("wrong")
     right = str(right)
     itog = str(answer2)
-    if right==itog &  ip == "192.168.0.4":
-        print('Right! Good job!')
+    if right==itog:
+        if ip2 == "192.168.0.4":
+            print('Right! Good job!')
     else:
         print("Wrong answer")
 
 
-#проверка является ли число простым.
 def IsTheNumberSimple(n):
     if n < 2:
         return False
     if n == 2:
         return True
-    i = 2
-    for i in range(n):
-        if n % i == 0:
+    l = 2
+    for l in range(n):
+        if n % 2 == 0:
             return False
-        i=+1
-        return True 
+        else:
+            return True 
+
+checkAnswer()
