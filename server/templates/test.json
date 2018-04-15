@@ -1,5 +1,41 @@
+<<<<<<< HEAD
 {
     "Rect1":{
+=======
+
+{
+    "Rect1":{
+        "Circle1":
+        {
+        "type": "circle",
+        "cx": "445",
+        "cy": "384",
+        "r": "2",
+        "stroke-width": "4",
+        "stroke": "blue",
+        "id": "13"
+        },
+        "Circle2":
+        {
+        "type": "circle",
+        "cx": "400",
+        "cy": "385",
+        "r": "2",
+        "stroke-width": "4",
+        "stroke": "blue",
+        "id": "14"
+        },
+        "Circle3":
+        {
+        "type": "circle",
+        "cx": "355",
+        "cy": "384",
+        "r": "2",
+        "stroke-width": "4",
+        "stroke": "blue",
+        "id": "15"
+        }, 
+>>>>>>> d86b7633c83ecb288d3f296085964c9dc73d3073
         "comp1":{
             "type": "image",
             "x": "160",
@@ -40,16 +76,6 @@
         "color": "#11111",
         "id": "4",
         "href": "images/monitor.svg"
-    },
-    "wifi":{
-        "type": "image",
-        "x": "350",
-        "y": "300",
-        "width": "100",
-        "height": "100",
-        "color": "#11111",
-        "id": "5",
-        "href": "images/wifi.svg"
     },
     "comp3":{
         "type": "image",
@@ -128,6 +154,7 @@
     "href": "images/file.svg",
     "id": "12"
     },
+<<<<<<< HEAD
     "Circle1":
     {
     "type": "circle",
@@ -162,3 +189,60 @@
 }}
     
 
+=======
+    "wifi":{
+        "type": "image",
+        "x": "350",
+        "y": "300",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "5",
+        "href": "images/wifi.svg"
+    }
+},
+    "Rect2":
+        { 
+            "divAction": {
+            "type": "div",
+            "x": "0", 
+            "y": "850", 
+            "width": "850", 
+            "height": "250", 
+            "background-color":"white",
+            "id": "16"  
+            },
+            "one":{
+                "type": "input",
+                "class": "one",
+                "placeholder": "0.0.0.0",
+                "id": "ip"
+            },
+            "two":{
+                "type": "input",
+                "class": "two",
+                "placeholder": "d (число)",
+                "id": "d"
+            },
+            "three":{
+                "type": "input",
+                "class": "two",
+                "placeholder": "N (число)",
+                "id": "N"
+            },
+            "four":{
+                "type": "input",
+                "class": "three",
+                "placeholder": "Численный ответ",
+                "id": "e"
+            },
+            "button":{
+                "type": "button",
+                "class": "Check",
+                "placeholder": "Отправить на проверку",
+                "onclick": "CheckAnswer();"
+            }
+        
+        }
+    }
+>>>>>>> d86b7633c83ecb288d3f296085964c9dc73d3073
