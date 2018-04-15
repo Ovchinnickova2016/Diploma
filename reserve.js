@@ -96,7 +96,7 @@ function CreateLabSettings1(svg){
 function File12(){
    this.width= 60;
    // var img1 = document.getElementById("12");
-    this.height = 60;d
+    this.height = 60;
 }
 
 function ButtonCreate(className, textContent, onclick, divAction){
