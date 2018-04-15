@@ -14,7 +14,8 @@ class Start {
             }
              if (attributes){
                  for (name in attributes){;
-                    this.element.setAttributeNS(null,[name],attributes[name]);
+                   this.element.setAttributeNS(null,[name],attributes[name]);
+                   console.log([name])
                  }
             return this.element;
         }
@@ -107,6 +108,14 @@ class Rect2 extends Start{
     start.appendNodeSVG(rect.constract('rect'));
 }());
 
+function File12(){
+    alert('Посмотреть сообщение');
+    var message = document.createAttribute('div');
+    message
+   // this.element.width= 60;
+    // var img1 = document.getElementById("12");
+    // this.element.height = 60;
+ }
 //проверка ответа, в будущем проверка будет 
 //производиться на стороне сервера =)
 function CheckAnswer(){

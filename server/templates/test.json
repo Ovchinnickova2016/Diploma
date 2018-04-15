@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+{
+    "Rect1":{
+=======
 
 {
     "Rect1":{
@@ -31,6 +35,7 @@
         "stroke": "blue",
         "id": "15"
         }, 
+>>>>>>> d86b7633c83ecb288d3f296085964c9dc73d3073
         "comp1":{
             "type": "image",
             "x": "160",
@@ -140,8 +145,8 @@
     "File":
     {
     "type": "image",
-    "x": "390",
-    "y": "83",
+    "x": "440",
+    "y": "133",
     "width": "20",
     "height": "20",
     "color": "#11111",
@@ -149,6 +154,42 @@
     "href": "images/file.svg",
     "id": "12"
     },
+<<<<<<< HEAD
+    "Circle1":
+    {
+    "type": "circle",
+    "cx": "445",
+    "cy": "384",
+    "r": "2",
+    "stroke-width": "4",
+    "stroke": "blue",
+    "z-index": "4",
+    "id": "13"
+    },
+    "Circle2":
+    {
+    "type": "circle",
+    "cx": "400",
+    "cy": "385",
+    "r": "2",
+    "stroke-width": "4",
+    "stroke": "blue",
+    "id": "14"
+    },
+    "Circle3":
+    {
+    "type": "circle",
+    "cx": "355",
+    "cy": "384",
+    "r": "2",
+    "stroke-width": "4",
+    "stroke": "blue",
+    "id": "15"
+    }
+}}
+    
+
+=======
     "wifi":{
         "type": "image",
         "x": "350",
@@ -204,3 +245,4 @@
         
         }
     }
+>>>>>>> d86b7633c83ecb288d3f296085964c9dc73d3073
