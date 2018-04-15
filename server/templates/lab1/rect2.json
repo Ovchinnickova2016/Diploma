@@ -7,7 +7,7 @@
         "width": "850", 
         "height": "250", 
         "background-color":"white",
-        "id": "16"  
+        "id": "action"
         },
         "one":{
             "type": "input",

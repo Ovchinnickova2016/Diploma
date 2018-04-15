@@ -5,40 +5,73 @@
 class Start {
     constructor(){
         }
-        createElementSVG(name, attributes){
-            this.NS = "http://www.w3.org/2000/svg";
-            this.element = document.createElementNS(this.NS, name);
-            if(name==="svg")
-            {
-                document.getElementById("widget").appendChild(this.element);
-            }
-             if (attributes){
-                 for (name in attributes){;
-                   this.element.setAttributeNS(null,[name],attributes[name]);
-                   console.log([name])
-                 }
-            return this.element;
+    createElementSVG(name, attributes){
+        this.NS = "http://www.w3.org/2000/svg";
+        this.element = document.createElementNS(this.NS, name);
+        if(name==="svg")
+        {
+            document.getElementById("widget").appendChild(this.element);
+        }
+            if (attributes){
+                for (name in attributes){;
+                this.element.setAttributeNS(null,[name],attributes[name]);
+                }
+        return this.element;
         }
     }
     createElementSimple(name,attributes){
             this.element = document.createElement(name);
             if(name==='button')
-                 {
+                {
                     this.element.innerHTML = "Отправить на проверку";
-                     console.log(this.element);
-                 }
-             if (attributes){
-                 for (name in attributes){;
+                }
+            if (attributes){
+                for (name in attributes){;
                     this.element.setAttribute([name],attributes[name]);
-                 }
+                }
             return this.element;
         }
     }
     appendNodeSVG(element){
-         return document.querySelector('svg').appendChild(element);
+        return document.querySelector('svg').appendChild(element);
     }
     appendNode(element){
         return document.getElementById('widget').appendChild(element);
+    }
+    connection(nameFetch){
+        var fetchResult = fetch(nameFetch, {mode: 'cors',method: 'get',dataType: 'json'});
+        async function fetchAsync () {
+            var response = await fetchResult;
+            var data = await response.json();
+            return data;
+        }
+        fetchAsync().then(data => {
+            this.jsonObj = data;
+            if(this.jsonObj.Rect1){
+                this.amount = Object.keys(this.jsonObj.Rect1).length;
+                //console.log(this.amount,this.jsonObj.Rect1);
+                this.addElementSVG(this.amount,this.jsonObj.Rect1);
+            }
+            if(this.jsonObj.Rect2){
+                this.amount = Object.keys(this.jsonObj.Rect2).length;
+                this.addElement(this.amount,this.jsonObj.Rect2);
+            }
+        })
+    }
+    addElementSVG(amount,jsonObj){
+       // console.log(amount,jsonObj);
+        for(amount in jsonObj)
+            {
+                //console.log(jsonObj[amount].type,jsonObj[amount]);
+                this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type,jsonObj[amount]));
+            }
+    }
+    addElement(amount,jsonObj){
+        for(amount in jsonObj)
+            {
+                //console.log(jsonObj[amount].type);
+                this.appendNode(this.createElementSimple(jsonObj[amount].type,jsonObj[amount]));
+            }
     }
 }
 
@@ -52,52 +85,34 @@ class Rect1 extends Start{
             height:850,
             fill:'#f5f5f5',
         }
-        this.constract = (name) => {
-           return this.createElementSVG(name,this.defaultSet);
-        }
-        this.Connection();
+        this.constract();
+        this.connection('http://localhost:5000/labs1/1');
     }
-    Connection(){
-        var fetchResult = fetch('http://localhost:5000/labs1/1', {mode: 'cors',method: 'get',dataType: 'json'});
-        async function fetchAsync () {
-            var response = await fetchResult;
-            var data = await response.json();
-            return data;
-          }
-          fetchAsync().then(data => {
-             var jsonObj = data.Rect1;
-             var amount = Object.keys(jsonObj).length;
-             for(amount in jsonObj)
-             {
-                 //console.log(jsonObj[amount].type);
-                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type,jsonObj[amount]));
-             }
-          })
+    constract(name){
+        return this.createElementSVG(name,this.defaultSet);
     }
 }
 
 class Rect2 extends Start{
     constructor(){
         super();
-        this.ConnectionRect2();
+        this.connection('http://localhost:5000/labs1/2');
+        this.checkAnswer();
     }
-    ConnectionRect2(){
-        var fetchResult = fetch('http://localhost:5000/labs1/2', {mode: 'cors',method: 'GET',dataType: 'json'});
-        async function fetchAsync () {
-            var response = await fetchResult;
-            var data = await response.json();
-            return data;
-          }
-          fetchAsync().then(data => {
-             var jsonObj = data.Rect2;
-             var amount = Object.keys(jsonObj).length;
-             for(amount in jsonObj)
-             {
-                 this.appendNode(this.createElementSimple(jsonObj[amount].type,jsonObj[amount]));
-             }
+    checkAnswer(){
+        fetch("http://localhost:5000/labs1/", {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          
+            //make sure to serialize your JSON body
+            body: JSON.stringify({
+              "name": "myName",
+              "password": "myPassword"
+            })
           })
-    }
-
+        }
 }
 
  (function(){
@@ -108,7 +123,7 @@ class Rect2 extends Start{
     start.appendNodeSVG(rect.constract('rect'));
 }());
 
-function File12(){
+/* function File12(){
     alert('Посмотреть сообщение');
     var message = document.createAttribute('div');
     message
@@ -122,7 +137,7 @@ function CheckAnswer(){
     /* var ch = ['#', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И',
                                                    'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 
                                                    'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ',
-                                                   'Э', 'Ю', 'Я'];*/
+                                                   'Э', 'Ю', 'Я'];
      var ip=document.getElementById('ip');
       var ip2 = ip.value.toString();
       var d = document.getElementById('d').value;
@@ -145,7 +160,7 @@ function CheckAnswer(){
        var itog = answer2.toString();
        if (right==itog &&  ip2 == "192.168.0.4" )
        alert('Right! Good job!');
-       else alert("Wrong answer");*/
+       else alert("Wrong answer");
        var numbers = {
            ip_json: ip2,
            d_json: d2,
@@ -167,4 +182,4 @@ function CheckAnswer(){
            if (n % i == 0) 
                return false; 
            return true; 
-   }
+   } */

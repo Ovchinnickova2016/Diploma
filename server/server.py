@@ -5,6 +5,15 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/labs1/', methods=['GET','POST'])
+# def index():
+#         some_json = request.get_json()
+#         return json.dumps({'you sent': some_json}),201
+
+def getin():
+        json_string = request.json
+        return jsonify({'about':json_string })
+
 @app.route('/labs1/<int:num>', methods=['GET'])
 def get_lab1(num):
     #value = request.json['rect']
