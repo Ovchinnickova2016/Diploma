@@ -7,7 +7,7 @@
         "width": "850", 
         "height": "250", 
         "background-color":"white",
-        "id": "16"  
+        "id": "action"
         },
         "one":{
             "type": "input",
@@ -36,8 +36,8 @@
         "button":{
             "type": "button",
             "class": "Check",
-            "onclick": "CheckAnswer();",
-            "color":"#000"
+            "color":"#000",
+            "onclick":"checkAnswer()"
         }
     }
 }
