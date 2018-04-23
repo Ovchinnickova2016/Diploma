@@ -1,35 +1,5 @@
 {
         "Rect1":{
-            "Circle1":
-            {
-            "type": "circle",
-            "cx": "445",
-            "cy": "384",
-            "r": "2",
-            "stroke-width": "4",
-            "stroke": "blue",
-            "id": "13"
-            },
-            "Circle2":
-            {
-            "type": "circle",
-            "cx": "400",
-            "cy": "385",
-            "r": "2",
-            "stroke-width": "4",
-            "stroke": "blue",
-            "id": "14"
-            },
-            "Circle3":
-            {
-            "type": "circle",
-            "cx": "355",
-            "cy": "384",
-            "r": "2",
-            "stroke-width": "4",
-            "stroke": "blue",
-            "id": "15"
-            }, 
             "comp1":{
                 "type": "image",
                 "x": "160",
@@ -144,9 +114,8 @@
         "width": "20",
         "height": "20",
         "color": "#11111",
-        "onclick": "File12()",
         "href": "images/file.svg",
-        "id": "12"
+        "id": "File"
         },
         "wifi":{
             "type": "image",
@@ -157,6 +126,36 @@
             "color": "#11111",
             "id": "5",
             "href": "images/wifi.svg"
-        }
+        },
+        "Circle1":
+            {
+            "type": "circle",
+            "cx": "445",
+            "cy": "384",
+            "r": "2",
+            "stroke-width": "4",
+            "stroke": "blue",
+            "id": "13"
+            },
+            "Circle2":
+            {
+            "type": "circle",
+            "cx": "400",
+            "cy": "385",
+            "r": "2",
+            "stroke-width": "4",
+            "stroke": "blue",
+            "id": "14"
+            },
+            "Circle3":
+            {
+            "type": "circle",
+            "cx": "355",
+            "cy": "384",
+            "r": "2",
+            "stroke-width": "4",
+            "stroke": "blue",
+            "id": "15"
+            }
     }
 }

@@ -4,40 +4,14 @@
 //и кнопки отправки на проверку. 
 class Start {
     constructor(){
+        this.star = () =>{
+            var rect1 = new Rect1();
+            var rect2 = new Rect2();
+            rect1.createElementSVG('svg');
+            rect1.appendNodeSVG(rect1.constract('rect'));
+            
+            }
         }
-    createElementSVG(name, attributes){
-        this.NS = "http://www.w3.org/2000/svg";
-        this.element = document.createElementNS(this.NS, name);
-        if(name==="svg")
-        {
-            document.getElementById("widget").appendChild(this.element);
-        }
-            if (attributes){
-                for (name in attributes){;
-                this.element.setAttributeNS(null,[name],attributes[name]);
-                }
-        return this.element;
-        }
-    }
-    createElementSimple(name,attributes){
-            this.element = document.createElement(name);
-            if(name==='button')
-                {
-                    this.element.innerHTML = "Отправить на проверку";
-                }
-            if (attributes){
-                for (name in attributes){;
-                    this.element.setAttribute([name],attributes[name]);
-                }
-            return this.element;
-        }
-    }
-    appendNodeSVG(element){
-        return document.querySelector('svg').appendChild(element);
-    }
-    appendNode(element){
-        return document.getElementById('widget').appendChild(element);
-    }
     connection(nameFetch){
         var fetchResult = fetch(nameFetch, {mode: 'cors',method: 'get',dataType: 'json'});
         async function fetchAsync () {
@@ -58,24 +32,106 @@ class Start {
             }
         })
     }
-    addElementSVG(amount,jsonObj){
-       // console.log(amount,jsonObj);
-        for(amount in jsonObj)
-            {
-                //console.log(jsonObj[amount].type,jsonObj[amount]);
-                this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type,jsonObj[amount]));
+    on(){
+        /* var x = document.createElementNS("http://www.w3.org/2000/svg","rect");
+        var y = document.querySelector('svg');
+        x.setAttribute('x',100);
+        x.setAttribute('y',100);
+        x.setAttribute('width',100);
+        x.setAttribute('height',100);
+        x.setAttribute('fill','black');
+        y.appendChild(x); */
+        console.log(this);
+        if(this.id=="1")
+        {
+            var x = document.querySelector('svg');
+            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
+            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
+            /* r.setAttributeNS(null,'x',100);
+            r.setAttributeNS(null,'y',100);
+            r.setAttributeNS(null,'width',200);
+            r.setAttributeNS(null,'height',200);
+            r.setAttributeNS(null,'fill','black'); */
+            t.setAttribute('x',160);
+            t.setAttribute('y',620);
+            t.setAttribute('font-size',20);
+            t.setAttribute('fill','black');
+            t.setAttribute('font-family','Roboto');
+            t.innerHTML = "192.168.0.3";
+
+            //x.appendChild(r);
+            x.appendChild(t);
+        }
+        if(this.id=="4")
+        {
+            var x = document.querySelector('svg');
+            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
+            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
+            /* r.setAttributeNS(null,'x',100);
+            r.setAttributeNS(null,'y',100);
+            r.setAttributeNS(null,'width',200);
+            r.setAttributeNS(null,'height',200);
+            r.setAttributeNS(null,'fill','black'); */
+            t.setAttribute('x',370);
+            t.setAttribute('y',620);
+            t.setAttribute('font-size',20);
+            t.setAttribute('fill','black');
+            t.setAttribute('font-family','Roboto');
+            t.innerHTML = "192.168.0.5"; 
+            //x.appendChild(r);
+            x.appendChild(t);
+        }
+        if(this.id=="6")
+        {
+            var x = document.querySelector('svg');
+            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
+            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
+            /* r.setAttributeNS(null,'x',100);
+            r.setAttributeNS(null,'y',100);
+            r.setAttributeNS(null,'width',200);
+            r.setAttributeNS(null,'height',200);
+            r.setAttributeNS(null,'fill','black'); */
+            t.setAttribute('x',570);
+            t.setAttribute('y',620);
+            t.setAttribute('font-size',20);
+            t.setAttribute('fill','black');
+            t.setAttribute('font-family','Roboto');
+            t.innerHTML = "192.168.0.10"; 
+            //x.appendChild(r);
+            x.appendChild(t);
+        }
+        if(this.id=='File')
+        {
+            var x = document.querySelector('svg');
+            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
+            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
+            /* r.setAttributeNS(null,'x',100);
+            r.setAttributeNS(null,'y',100);
+            r.setAttributeNS(null,'width',200);
+            r.setAttributeNS(null,'height',200);
+            r.setAttributeNS(null,'fill','black'); */
+            t.setAttribute('x',410);
+            t.setAttribute('y',83);
+            t.setAttribute('font-size',20);
+            t.setAttribute('fill','black');
+            t.setAttribute('font-family','Roboto');
+            t.innerHTML = "192.168.0.10"; 
+            //x.appendChild(r);
+            this.defaultSet1 = {
+                x:410,
+                y:83,
+                fontSize:20,
+                fontFamily: 'Roboto',
+                fill:'black',
+                class:'rect1'
             }
-    }
-    addElement(amount,jsonObj){
-        for(amount in jsonObj)
-            {
-                //console.log(jsonObj[amount].type);
-                this.appendNode(this.createElementSimple(jsonObj[amount].type,jsonObj[amount]));
-            }
+            rect1.addElementSVG('text',this.defaultSet1);
+            x.appendChild(t);
+        }
     }
 }
 
-class Rect1 extends Start{
+ class Rect1 extends Start{
     constructor(){
         super()
         this.defaultSet ={
@@ -84,71 +140,131 @@ class Rect1 extends Start{
             width:850,
             height:850,
             fill:'#f5f5f5',
+            class:'rect1'
         }
-        this.constract();
+        //this.constract();
         this.connection('http://localhost:5000/labs1/1');
     }
     constract(name){
         return this.createElementSVG(name,this.defaultSet);
     }
-}
+    /* on(){
+        var x = document.getElementById('12');
+        x.addEventListener(onclick,function(){
+            return console.log(this);
+        })
+    } */
+    createElementSVG(name, attributes){
+        this.NS = "http://www.w3.org/2000/svg";
+        this.NS1 = "http://www.w3.org/1999/xlink";
+        this.element = document.createElementNS(this.NS, name);
+        if(name=="svg")
+        {
+            document.getElementById("widget").appendChild(this.element);
+            //document.querySelector('svg').appendChild(document.createElement('g'));
+        }
+            if (attributes){
+                for (var k in attributes){
+                    if(attributes[k]=="image"){
+                        this.element.setAttributeNS(this.NS1,'href',attributes[k]);
+                        this.element.onclick = this.on;
+                    }
+                    else if (attributes[k]!="image"){
+                        this.element.setAttributeNS(null,[k],attributes[k]);
+                        this.element.onclick = this.on;
+                    }
+                }
+        return this.element;
+        }
+    }
+    appendNodeSVG(element){
+        //var test =  document.querySelector('g');
+       // var test1= document.createElement('g');
+       // test.setAttribute("class","test1");
+        var svg = document.querySelector('svg');
+        //svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+/*         if(this.element.classList=="rect1"){
+            document.querySelector('svg').appendChild(element);
+        } */
+        //test.appendChild(test1);
+        return svg.appendChild(element);
+    }
+    addElementSVG(amount,jsonObj){
+        // console.log(amount,jsonObj);
+         for(amount in jsonObj)
+             {
+                 //console.log(jsonObj[amount].type,jsonObj[amount]);
+                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type,jsonObj[amount]));
+             }
+    }
+} 
 
 class Rect2 extends Start{
     constructor(){
         super();
         this.connection('http://localhost:5000/labs1/2');
     }
-    /* on(event,callback,classNameBut){
+    createElementSimple(name,attributes){
+        this.element = document.createElement(name);
+        if(name==='button')
+            {
+                this.element.innerHTML = "Отправить на проверку";
+            }
+        
+        if (attributes){
+            for (var k in attributes){
+                this.element.setAttribute([k],attributes[k]);
+                this.element.onclick = this.on;
+            }
+        return this.element;
+        }
+    }
+    addElement(amount,jsonObj){
+        for(amount in jsonObj)
+            {
+                //console.log(jsonObj[amount].type);
+                this.appendNode(this.createElementSimple(jsonObj[amount].type,jsonObj[amount]));
+            }
+    }
+    appendNode(element){
+        return document.getElementById('widget').appendChild(element);
+    }
+
+
+    /* on(classNameBut){
         this.elems = document.getElementsByClassName(classNameBut);
-        for(var i = 0;i<this.elems.length;i++){
-            this.elems[i].addEventListener(event,callback);
-        }
+        this.elems.onclick = () => {
+                console.log(this);
+                fetch("http://localhost:5000/labs1/check/", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                  
+                    //make sure to serialize your JSON body
+                    body: JSON.stringify(
+                        {
+                            "array":{
+                                "name": "myName",
+                                "password": "myPassword"
+                            }
+                        })
+                  })
+        }; 
+            //event.currentTarget.checkAnswer()
     } */
-    checkAnswer(){
-        fetch("http://localhost:5000/labs1/check/", {
-            method: "POST",
-            headers: {
-              'Content-Type': 'application/json'
-            },
-          
-            //make sure to serialize your JSON body
-            body: JSON.stringify(
-                {
-                    "array":{
-                        "name": "myName",
-                        "password": "myPassword"
-                    }
-                })
-          })
-        }
+}
+class Rect3 extends Rect2{
+    constructor(){
+        super();
+    }
 }
 
  (function(){
     var start = new Start();
-    var rect = new Rect1();
-    var rect2 = new Rect2();
-    var svg = start.createElementSVG('svg');
-    start.appendNodeSVG(rect.constract('rect'));
+    start.star();
 }());
-function checkAnswer(){
-    fetch("http://localhost:5000/labs1/check/", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      
-        //make sure to serialize your JSON body
-        body: JSON.stringify(
-            {
-                "numbers":{
-                    "ip_json": "ip2",
-                    "d_json": "d2",
-                    "N_json": "N2",
-                    "answer_json": "answer2"
-                }
-            })
-      })
-    }
+
 /* function File12(){
     alert('Посмотреть сообщение');
     var message = document.createAttribute('div');
@@ -156,56 +272,4 @@ function checkAnswer(){
    // this.element.width= 60;
     // var img1 = document.getElementById("12");
     // this.element.height = 60;
- }
-//проверка ответа, в будущем проверка будет 
-//производиться на стороне сервера =)
-function CheckAnswer(){
-    /* var ch = ['#', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И',
-                                                   'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 
-                                                   'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ',
-                                                   'Э', 'Ю', 'Я'];
-     var ip=document.getElementById('ip');
-      var ip2 = ip.value.toString();
-      var d = document.getElementById('d').value;
-      var d2 = parseInt(d);
-      var N = document.getElementById('N').value;
-      var N2 = parseInt(N);
-      var answer=document.getElementById('e').value;
-      var answer2 = Array.from(answer);
-      //var dd = "false";
-      //dd = IsTheNumberSimple(d2); 
-      //var right = ["14", "10", "18", "16", "14"];
-      /*if (dd==true && N2==10){
-         for( var p = 0, j=0; p < answer2.length; ++p, j++) {
-            right[j] = (Math.pow(right[p], d2))%N2;
-           // alert(right[j]);
-            }  
-         }
-         else alert("Неправильные данные!");
-       var right = right.toString();
-       var itog = answer2.toString();
-       if (right==itog &&  ip2 == "192.168.0.4" )
-       alert('Right! Good job!');
-       else alert("Wrong answer");
-       var numbers = {
-           ip_json: ip2,
-           d_json: d2,
-           N_json: N2,
-           answer_json: answer2
-       }
-    var itog = JSON.stringify(numbers);
-   alert (itog);
-   }
-   
-   //проверка является ли число простым.
-   function IsTheNumberSimple(n) 
-   { 
-       if (n < 2) 
-           return false; 
-       if (n == 2) 
-           return true; 
-       for (var i = 2; i < n; i++) 
-           if (n % i == 0) 
-               return false; 
-           return true; 
-   } */
+ }*/

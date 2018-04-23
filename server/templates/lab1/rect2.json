@@ -36,8 +36,7 @@
         "button":{
             "type": "button",
             "class": "Check",
-            "color":"#000",
-            "onclick":"checkAnswer()"
+            "color":"#000"
         }
     }
 }
