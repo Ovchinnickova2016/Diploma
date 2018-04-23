@@ -42,7 +42,7 @@ class Start {
         x.setAttribute('fill','black');
         y.appendChild(x); */
         console.log(this);
-        if(this.id=="1")
+        if(this.id=="comp1")
         {
             var x = document.querySelector('svg');
             //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
@@ -62,7 +62,7 @@ class Start {
             //x.appendChild(r);
             x.appendChild(t);
         }
-        if(this.id=="4")
+        if(this.id=="comp2")
         {
             var x = document.querySelector('svg');
             //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
@@ -81,7 +81,7 @@ class Start {
             //x.appendChild(r);
             x.appendChild(t);
         }
-        if(this.id=="6")
+        if(this.id=="comp3")
         {
             var x = document.querySelector('svg');
             //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
