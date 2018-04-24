@@ -70,4 +70,16 @@ button.Check {
   padding-bottom: 10px;
   padding-left: 50px; }
 
+#taskId {
+  display: none; }
+
+#taskTextID {
+  display: none; }
+
+#comp1 path {
+  stroke: rgba(0, 0, 0, 0.5);
+  stroke-width: 20; }
+  #comp1 path:hover {
+    stroke: skyblue; }
+
 /*# sourceMappingURL=style.css.map */

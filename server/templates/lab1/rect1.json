@@ -8,6 +8,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "comp1",
+                "class": "comp1",
                 "href": "images/monitor.svg"
             },
             "transfer":{
@@ -50,6 +51,33 @@
             "color": "#11111",
             "id": "comp3",
             "href": "images/monitor.svg"
+        },
+        "ip1":{
+            "type":"text",
+            "x": "160",
+            "y": "620",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip1"
+        },
+        "ip2":{
+            "type":"text",
+            "x": "370",
+            "y": "620",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip2"
+        },
+        "ip3":{
+            "type":"text",
+            "x": "580",
+            "y": "620",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip3"
         },
         "LineComDB":
         {
@@ -156,6 +184,34 @@
             "stroke-width": "4",
             "stroke": "blue",
             "id": "15"
+            },
+            "but":{
+            "type": "image",
+            "x": "750",
+            "y": "30",
+            "width": "40",
+            "height": "40",
+            "color": "#11111",
+            "href": "images/question.svg",
+            "id": "task"
+            },
+            "taskDiv":{
+                "type": "rect",
+                "x": "150", 
+                "y": "30", 
+                "width": "750", 
+                "height": "750", 
+                "fill":"white",
+                "id": "taskId"
+            },
+            "taskText":{
+                "type":"text",
+                "x": "170",
+                "y": "50",
+                "fontSize":"20",
+                "fontFamily":"SegoeUI",
+                "fill": "black",
+                "id":"taskTextID"
             }
     }
 }

@@ -32,6 +32,15 @@ class Start {
             }
         })
     }
+/*     createTextNode(text,attributes){
+        this.element = document.createElementNS("http://www.w3.org/2000/svg",'text');
+        for(var k in attributes)
+        {
+            this.element.setAttributeNS(null,[k],attributes[k]);
+        }
+        this.element.innerHTML = text;
+        return this.element
+    } */
     on(){
         /* var x = document.createElementNS("http://www.w3.org/2000/svg","rect");
         var y = document.querySelector('svg');
@@ -41,92 +50,54 @@ class Start {
         x.setAttribute('height',100);
         x.setAttribute('fill','black');
         y.appendChild(x); */
-        console.log(this);
-        if(this.id=="comp1")
+        //console.log(this);
+        if((this.id=="comp1")||(this.id=='ip1'))
         {
-            var x = document.querySelector('svg');
-            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
-            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
-            /* r.setAttributeNS(null,'x',100);
-            r.setAttributeNS(null,'y',100);
-            r.setAttributeNS(null,'width',200);
-            r.setAttributeNS(null,'height',200);
-            r.setAttributeNS(null,'fill','black'); */
-            t.setAttribute('x',160);
-            t.setAttribute('y',620);
-            t.setAttribute('font-size',20);
-            t.setAttribute('fill','black');
-            t.setAttribute('font-family','Roboto');
-            t.innerHTML = "192.168.0.3";
-
-            //x.appendChild(r);
-            x.appendChild(t);
+            document.getElementById('ip').value = '192.168.0.3';
+            //document.getElementById('comp1').fill = 'black';
         }
-        if(this.id=="comp2")
+        if((this.id=="comp2")||(this.id=='ip2'))
         {
-            var x = document.querySelector('svg');
-            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
-            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
-            /* r.setAttributeNS(null,'x',100);
-            r.setAttributeNS(null,'y',100);
-            r.setAttributeNS(null,'width',200);
-            r.setAttributeNS(null,'height',200);
-            r.setAttributeNS(null,'fill','black'); */
-            t.setAttribute('x',370);
-            t.setAttribute('y',620);
-            t.setAttribute('font-size',20);
-            t.setAttribute('fill','black');
-            t.setAttribute('font-family','Roboto');
-            t.innerHTML = "192.168.0.5"; 
-            //x.appendChild(r);
-            x.appendChild(t);
+            document.getElementById('ip').value = '192.168.0.4';
         }
-        if(this.id=="comp3")
+        if((this.id=="comp3")||(this.id=='ip3'))
         {
-            var x = document.querySelector('svg');
-            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
-            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
-            /* r.setAttributeNS(null,'x',100);
-            r.setAttributeNS(null,'y',100);
-            r.setAttributeNS(null,'width',200);
-            r.setAttributeNS(null,'height',200);
-            r.setAttributeNS(null,'fill','black'); */
-            t.setAttribute('x',570);
-            t.setAttribute('y',620);
-            t.setAttribute('font-size',20);
-            t.setAttribute('fill','black');
-            t.setAttribute('font-family','Roboto');
-            t.innerHTML = "192.168.0.10"; 
-            //x.appendChild(r);
-            x.appendChild(t);
+            document.getElementById('ip').value = '192.168.0.5';
         }
-        if(this.id=='File')
+        if(this.id=='task')
         {
-            var x = document.querySelector('svg');
-            //var r = document.createElementNS("http://www.w3.org/2000/svg",'rect');
-            var t = document.createElementNS("http://www.w3.org/2000/svg",'text');
-            /* r.setAttributeNS(null,'x',100);
-            r.setAttributeNS(null,'y',100);
-            r.setAttributeNS(null,'width',200);
-            r.setAttributeNS(null,'height',200);
-            r.setAttributeNS(null,'fill','black'); */
-            t.setAttribute('x',410);
-            t.setAttribute('y',83);
-            t.setAttribute('font-size',20);
-            t.setAttribute('fill','black');
-            t.setAttribute('font-family','Roboto');
-            t.innerHTML = "192.168.0.10"; 
-            //x.appendChild(r);
-            this.defaultSet1 = {
-                x:410,
-                y:83,
-                fontSize:20,
-                fontFamily: 'Roboto',
-                fill:'black',
-                class:'rect1'
+            document.getElementById('taskId').style.display = 'block';
+            document.getElementById('taskTextID').style.display = 'block';
+            document.getElementById('taskTextID').innerHTML = "Содержание и суть лабораторной работы.";
+            
+        }
+        if(this.id=='taskId')
+        {
+            document.getElementById('taskId').style.display = 'none';
+            document.getElementById('taskTextID').style.display = 'none';
+        }
+        if(this.id=='checkid')
+        {
+           function checkAnswer(){
+                fetch("http://localhost:5000/labs1/check/", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                  
+                    //make sure to serialize your JSON body
+                    body: JSON.stringify(
+                        {
+                            "array":{
+                                "ip":   document.getElementById('ip').value,
+                                "d":    document.getElementById('d').value,
+                                "N":    document.getElementById('N').value,
+                                "e":    document.getElementById('e').value
+                            }
+                        })
+                  })
             }
-            rect1.addElementSVG('text',this.defaultSet1);
-            x.appendChild(t);
+            checkAnswer();
         }
     }
 }
@@ -163,17 +134,26 @@ class Start {
             document.getElementById("widget").appendChild(this.element);
             //document.querySelector('svg').appendChild(document.createElement('g'));
         }
-            if (attributes){
-                for (var k in attributes){
-                    if(attributes[k]=="image"){
-                        this.element.setAttributeNS(this.NS1,'href',attributes[k]);
-                        this.element.onclick = this.on;
-                    }
-                    else if (attributes[k]!="image"){
-                        this.element.setAttributeNS(null,[k],attributes[k]);
-                        this.element.onclick = this.on;
-                    }
+        if (attributes){
+            for (var k in attributes){
+                if((name=="text")&&(attributes[k]=="ip1")){
+                    this.element.innerHTML = '192.168.0.3'
                 }
+                if((name=="text")&&(attributes[k]=="ip2")){
+                    this.element.innerHTML = '192.168.0.4'
+                }
+                if((name=="text")&&(attributes[k]=="ip3")){
+                    this.element.innerHTML = '192.168.0.5'
+                }
+                if(attributes[k]=="image"){
+                    this.element.setAttributeNS(this.NS1,'href',attributes[k]);
+                    this.element.onclick = this.on;
+                }
+                else if (attributes[k]!="image"){
+                    this.element.setAttributeNS(null,[k],attributes[k]);
+                    this.element.onclick = this.on;
+                }
+            }
         return this.element;
         }
     }
@@ -229,30 +209,6 @@ class Rect2 extends Start{
     appendNode(element){
         return document.getElementById('widget').appendChild(element);
     }
-
-
-    /* on(classNameBut){
-        this.elems = document.getElementsByClassName(classNameBut);
-        this.elems.onclick = () => {
-                console.log(this);
-                fetch("http://localhost:5000/labs1/check/", {
-                    method: "POST",
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                  
-                    //make sure to serialize your JSON body
-                    body: JSON.stringify(
-                        {
-                            "array":{
-                                "name": "myName",
-                                "password": "myPassword"
-                            }
-                        })
-                  })
-        }; 
-            //event.currentTarget.checkAnswer()
-    } */
 }
 class Rect3 extends Rect2{
     constructor(){

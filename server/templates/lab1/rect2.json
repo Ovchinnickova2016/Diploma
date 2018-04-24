@@ -36,7 +36,8 @@
         "button":{
             "type": "button",
             "class": "Check",
-            "color":"#000"
+            "color":"#000",
+            "id":"checkid"
         }
     }
 }
