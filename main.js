@@ -88,12 +88,10 @@ class Start {
                     //make sure to serialize your JSON body
                     body: JSON.stringify(
                         {
-                            "array":{
                                 "ip":   document.getElementById('ip').value,
                                 "d":    document.getElementById('d').value,
                                 "N":    document.getElementById('N').value,
                                 "e":    document.getElementById('e').value
-                            }
                         })
                   })
             }
