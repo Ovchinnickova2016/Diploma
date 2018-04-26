@@ -34,33 +34,27 @@ def checkAnswer(student_answer):
     answer0 = int(answer0)
     ip2 = ip
     answer2 = [int(r) for r in list(str(answer0))]
-    print(answer2)
     dd = IsTheNumberSimple(d2)
-    print(dd)
     right = [14, 10, 18, 16, 14]
     p = 0
     j = 0
     k = len(str(answer0))
-    print(k)
-    print(N2)
-    print(dd)
-    if dd is True:
-        if N2 == 10:
-            while j < k:
-                right[j] = right[j] ** d2 % N2
-                print(right[j])
-                j += 1
-    else:
-        jsonData = json.dumps({"answer":"False"}) #ответ клиенту правльный ответ или нет 
-        fh = open('data1.json', 'w')#записали ответ в data1.json
-        fh.write(jsonData)
-        fh.close()
+    if dd is True: 
+        #if N2 == 10:
+        while j < k:
+            right[j] = right[j] ** d2 % N2
+            j += 1
     if str(right) == str(answer2):
         if ip2 == "192.168.0.4":
-            print('Right! Good job!')
+            jsonData = json.dumps({"answer":"True"}) #ответ клиенту правльный ответ или нет 
+            fh = open('data1.json', 'w')#записали ответ в data1.json
+            fh.write(jsonData)
+            fh.close()
         else:
-            print(right, answer2, ip2)
-            print("Wrong answer")
+            jsonData = json.dumps({"answer":"False2"}) #ответ клиенту правльный ответ или нет 
+            fh = open('data1.json', 'w')#записали ответ в data1.json
+            fh.write(jsonData)
+            fh.close()
 
 
 def IsTheNumberSimple(n):

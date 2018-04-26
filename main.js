@@ -68,13 +68,27 @@ class Start {
         {
             document.getElementById('taskId').style.display = 'block';
             document.getElementById('taskTextID').style.display = 'block';
-            document.getElementById('taskTextID').innerHTML = "Содержание и суть лабораторной работы.";
+            document.getElementById('taskTextID').innerHTML ="";
             
         }
         if(this.id=='taskId')
         {
             document.getElementById('taskId').style.display = 'none';
             document.getElementById('taskTextID').style.display = 'none';
+        }
+        if(this.id == 'File1')
+        {
+            document.getElementById('File1Id').style.display = 'block';
+            document.getElementById('File1TextID').style.display = 'block';
+            document.getElementById("File1TextID").innerHTML= "Сообщение:406 9915660 05464616061 - 9915660";
+            document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10"
+        }
+        if(this.id == "File1Id")
+        {
+            document.getElementById('File1Id').style.display = 'none';
+            document.getElementById('File1TextID').style.display = 'none';
+            document.getElementById("File1TextID2").style.display = "none";
+      
         }
         if(this.id=='checkid')
         {

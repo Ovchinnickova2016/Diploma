@@ -134,17 +134,6 @@
         "stroke": "lightgrey",
         "id": "11"
         },
-        "File":
-        {
-        "type": "image",
-        "x": "390",
-        "y": "83",
-        "width": "20",
-        "height": "20",
-        "color": "#11111",
-        "href": "images/file.svg",
-        "id": "File"
-        },
         "wifi":{
             "type": "image",
             "x": "350",
@@ -212,6 +201,44 @@
                 "fontFamily":"SegoeUI",
                 "fill": "black",
                 "id":"taskTextID"
-            }
+            },
+            
+            "butFile":{
+                "type": "image",
+                "x": "390",
+                "y": "83",
+                "width": "20",
+                "height": "20",
+                "color": "#11111",
+                "href": "images/file.svg",
+                "id": "File1"
+                },
+                "FileDiv":{
+                    "type": "rect",
+                    "x": "200", 
+                    "y": "90", 
+                    "width": "130", 
+                    "height": "50", 
+                    "fill":"white",
+                    "id": "File1Id"
+                },
+                "FileText":{
+                    "type":"text",
+                    "x": "177",
+                    "y": "50",
+                    "fontSize":"10",
+                    "fontFamily":"SegoeUI",
+                    "fill": "black",
+                    "id":"File1TextID"
+                },
+                "FileText2":{
+                    "type":"text",
+                    "x": "205",
+                    "y": "120",
+                    "fontSize":"10",
+                    "fontFamily":"SegoeUI",
+                    "fill": "black",
+                    "id":"File1TextID2"
+                }
     }
 }
