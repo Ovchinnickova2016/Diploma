@@ -44,70 +44,77 @@
             var answer = {};
             return answer;
         }
-        on(){
-            /* var x = document.createElementNS("http://www.w3.org/2000/svg","rect");
-            var y = document.querySelector('svg');
-            x.setAttribute('x',100);
-            x.setAttribute('y',100);
-            x.setAttribute('width',100);
-            x.setAttribute('height',100);
-            x.setAttribute('fill','black');
-            y.appendChild(x); */
-            //console.log(this);
-            if((this.id=="comp1")||(this.id=='ip1'))
-            {
-                document.getElementById('ip').value = '192.168.0.3';
-                //this.answer['ip'] = document.getElementById('ip').value;
-                console.log(this.eke());
-                //document.getElementById('comp1').fill = 'black';
-            }
-            if((this.id=="comp2")||(this.id=='ip2'))
-            {
-                document.getElementById('ip').value = '192.168.0.4';
-                //this.answer = document.getElementById('ip').value;
-                console.log(this.answer);
-            }
-            if((this.id=="comp3")||(this.id=='ip3'))
-            {
-                document.getElementById('ip').value = '192.168.0.5';
-                //this.answer = document.getElementById('ip').value;
-                console.log(this.answer);
-            }
-            if(this.id=='task')
-            {
-                document.getElementById('taskId').style.display = 'block';
-                document.getElementById('taskTextID').style.display = 'block';
-                document.getElementById('taskTextID').innerHTML = "Содержание и суть лабораторной работы.";
-                
-            }
-            if(this.id=='taskId')
-            {
-                document.getElementById('taskId').style.display = 'none';
-                document.getElementById('taskTextID').style.display = 'none';
-            }
-            if(this.id=='checkid')
-            {
-            function checkAnswer(){
-                    fetch("http://localhost:5000/labs1/check/", {
-                        method: "POST",
-                        headers: {
-                        'Content-Type': 'application/json'
-                        },
-                    
-                        //make sure to serialize your JSON body
-                        body: JSON.stringify(
-                            {
-                                    "ip":   document.getElementById('ip').value,
-                                    "d":    document.getElementById('d').value,
-                                    "N":    document.getElementById('N').value,
-                                    "e":    document.getElementById('e').value
-                            })
-                    })
-                }
-                checkAnswer();
+    on(){
+        /* var x = document.createElementNS("http://www.w3.org/2000/svg","rect");
+        var y = document.querySelector('svg');
+        x.setAttribute('x',100);
+        x.setAttribute('y',100);
+        x.setAttribute('width',100);
+        x.setAttribute('height',100);
+        x.setAttribute('fill','black');
+        y.appendChild(x); */
+        //console.log(this);
+        if((this.id=="comp1")||(this.id=='ip1'))
+        {
+            document.getElementById('ip').value = '192.168.0.3';
+            //document.getElementById('comp1').fill = 'black';
+        }
+        if((this.id=="comp2")||(this.id=='ip2'))
+        {
+            document.getElementById('ip').value = '192.168.0.4';
+        }
+        if((this.id=="comp3")||(this.id=='ip3'))
+        {
+            document.getElementById('ip').value = '192.168.0.5';
+        }
+        if(this.id=='task')
+        {
+            document.getElementById('taskId').style.display = 'block';
+            document.getElementById('taskTextID').style.display = 'block';
+            document.getElementById('taskTextID').innerHTML ="";
+            
+        }
+        if(this.id=='taskId')
+        {
+            document.getElementById('taskId').style.display = 'none';
+            document.getElementById('taskTextID').style.display = 'none';
+        }
+        if(this.id == 'File1')
+        {
+            document.getElementById('File1Id').style.display = 'block';
+            document.getElementById('File1TextID').style.display = 'block';
+            document.getElementById("File1TextID").innerHTML= "Сообщение:406 9915660 05464616061 - 9915660";
+            document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10"
+        }
+        if(this.id == "File1Id")
+        {
+            document.getElementById('File1Id').style.display = 'none';
+            document.getElementById('File1TextID').style.display = 'none';
+            document.getElementById("File1TextID2").style.display = "none";
+      
+        }
+        if(this.id=='checkid')
+        {
+           function checkAnswer(){
+                fetch("http://localhost:5000/labs1/check/", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                  
+                    //make sure to serialize your JSON body
+                    body: JSON.stringify(
+                        {
+                                "ip":   document.getElementById('ip').value,
+                                "d":    document.getElementById('d').value,
+                                "N":    document.getElementById('N').value,
+                                "e":    document.getElementById('e').value
+                        })
+                  })
             }
         }
     }
+}
 
     class Rect1 extends Start{
         constructor(){
