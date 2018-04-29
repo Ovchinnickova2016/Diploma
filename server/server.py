@@ -57,7 +57,10 @@ def checkAnswer(student_answer):
         fh.close()
     if str(right) == str(answer2):
         if ip2 == "192.168.0.4":
-            print('Right! Good job!')
+            jsonData = json.dumps({"answer":"True"}) #ответ клиенту правльный ответ или нет 
+            fh = open('data1.json', 'w')#записали ответ в data1.json
+            fh.write(jsonData)
+            fh.close()
         else:
             print(right, answer2, ip2)
             print("Wrong answer")
