@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/labs1/check/', methods=['GET','POST'])
-def postJsonHandler():
+def checkAnswer():
     if(request.method=="POST"):
         content = request.get_json()
         jsonData = json.dumps(content)
@@ -15,43 +15,50 @@ def postJsonHandler():
         fh.write(jsonData)
         fh.close()
         return "True" 
-    else:
-        file1 = open('data.json').read()
+    elif(request.method=="GET"):
+        file1 = open('data1.json').read()
         rect = json.loads(file1)
-        student_answer = json.dumps(rect, ensure_ascii=False, indent=4)
-        checkAnswer(student_answer)
-        return student_answer
-
-def checkAnswer(student_answer):
-    student_answer = json.loads(student_answer)
+        answer = json.dumps(rect, ensure_ascii=False, indent=4)
+        return answer
+    f = open('data.json').read()
+    student_answer = json.loads(f)
     print(type(student_answer))
     ip = student_answer["ip"]
     d2 = student_answer["d"]
     N2 = student_answer["N"]
     answer0 = student_answer["e"]
-    d2= int(d2)
-    N2 = int(N2)
-    answer0 = int(answer0)
-    ip2 = ip
-    answer2 = [int(r) for r in list(str(answer0))]
-    dd = IsTheNumberSimple(d2)
-    right = [14, 10, 18, 16, 14]
-    p = 0
-    j = 0
-    k = len(str(answer0))
-    if dd is True: 
-        #if N2 == 10:
-        while j < k:
-            right[j] = right[j] ** d2 % N2
-            j += 1
-    if str(right) == str(answer2):
-        if ip2 == "192.168.0.4":
-            jsonData = json.dumps({"answer":"True"}) #ответ клиенту правльный ответ или нет 
-            fh = open('data1.json', 'w')#записали ответ в data1.json
-            fh.write(jsonData)
-            fh.close()
+    if((ip == '')or(d2=='')or(N2=='')or(answer0=='')):
+        jsonData = json.dumps({"answer":"false"}) #ответ клиенту правльный ответ или нет 
+        fh = open('data1.json', 'w')#записали ответ в data1.json
+        fh.write(jsonData)
+        fh.close()
+    else:
+        d2= int(d2)
+        N2 = int(N2)
+        answer0 = int(answer0)
+        ip2 = ip
+        answer2 = [int(r) for r in list(str(answer0))]
+        dd = IsTheNumberSimple(d2)
+        right = [14, 10, 18, 16, 14]
+        p = 0
+        j = 0
+        k = len(str(answer0))
+        if dd is True: 
+            #if N2 == 10:
+            while j < k:
+                right[j] = right[j] ** d2 % N2
+                j += 1
+        print(right,' ',answer2)
+        if str(right) == str(answer2):
+            if ip2 == "192.168.0.4":
+                jsonData = json.dumps({"answer":"true"}) #ответ клиенту правльный ответ или нет 
+                fh = open('data1.json', 'w')#записали ответ в data1.json
+                fh.write(jsonData)
+                fh.close()
+            else:
+                print('kek')
         else:
-            jsonData = json.dumps({"answer":"False2"}) #ответ клиенту правльный ответ или нет 
+            jsonData = json.dumps({"answer":"false"}) #ответ клиенту правльный ответ или нет 
             fh = open('data1.json', 'w')#записали ответ в data1.json
             fh.write(jsonData)
             fh.close()

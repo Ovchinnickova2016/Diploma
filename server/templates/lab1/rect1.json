@@ -184,6 +184,17 @@
             "href": "images/question.svg",
             "id": "task"
             },
+            
+            "butFile":{
+                "type": "image",
+                "x": "390",
+                "y": "83",
+                "width": "20",
+                "height": "20",
+                "color": "#11111",
+                "href": "images/file.svg",
+                "id": "File1"
+                },
             "taskDiv":{
                 "type": "rect",
                 "x": "150", 
@@ -202,17 +213,6 @@
                 "fill": "black",
                 "id":"taskTextID"
             },
-            
-            "butFile":{
-                "type": "image",
-                "x": "390",
-                "y": "83",
-                "width": "20",
-                "height": "20",
-                "color": "#11111",
-                "href": "images/file.svg",
-                "id": "File1"
-                },
                 "FileDiv":{
                     "type": "rect",
                     "x": "200", 
