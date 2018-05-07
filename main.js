@@ -184,12 +184,15 @@
                     if((name=="text")&&(attributes[k]=="ip3")){
                         this.element.innerHTML = '192.168.0.5'
                     }
-                    if(attributes[k]=="image"){
-                        this.element.setAttributeNS(this.NS1,'href',attributes[k]);
+                    if(name=="image"){
+                        if(k=='href'){
+                            this.element.setAttributeNS(this.NS1,[k],attributes[k]);
+                        }
+                        this.element.setAttribute([k],attributes[k]);
                         this.element.onclick = this.on;
-                    }
-                    else if (attributes[k]!="image"){
-                        this.element.setAttributeNS(null,[k],attributes[k]);
+                     }
+                     else if (name!="image"){
+                        this.element.setAttribute([k],attributes[k]);
                         this.element.onclick = this.on;
                     }
                 }
